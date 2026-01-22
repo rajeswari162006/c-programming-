@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    int marks[50][5];
+    int total;
+
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        total = 0;
+        printf("\nEnter marks of 5 subjects for student %d:\n", i + 1);
+
+        for(j = 0; j < 5; j++) {
+            scanf("%d", &marks[i][j]);
+            total += marks[i][j];
+        }
+
+        printf("Total marks of student %d = %d\n", i + 1, total);
+    }
+
+    return 0;
+}
+output:
+Enter number of students: 2
+
+Enter marks of 5 subjects for student 1:
+70 75 80 85 90
+Total marks of student 1 = 400
+
+Enter marks of 5 subjects for student 2:
+60 65 70 75 80
+Total marks of student 2 = 350
+
