@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);  // Use fgets for spaces
+
+    int len = strlen(str);
+    printf("Length of the string: %d\n", len);
+
+    return 0;
+}
