@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+struct Employee {
+    int id;
+    char name[50];
+    float salary;
+};
+
+int main() {
+    struct Employee e;
+    FILE *fp;
+
+    fp = fopen("employees.txt", "r");
+    if (fp == NULL) {
+        printf("Unable to open file.\n");
+        return 1;
+    }
+
+    printf("Employee Details:\n");
+    while (fscanf(fp, "%d %s %f", &e.id, e.name, &e.salary) != EOF) {
+        printf("ID: %d, Name: %s, Salary: %.2f\n", e.id, e.name, e.salary);
+    }
+
+    fclose(fp);
+    return 0;
+}
