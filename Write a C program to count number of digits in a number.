@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    long number;  // Use long to handle large numbers
+    int count = 0;
+
+    printf("Enter a number: ");
+    scanf("%ld", &number);
+
+    if(number == 0) {
+        count = 1;  // 0 has 1 digit
+    } else {
+        if(number < 0) {
+            number = -number; // Make number positive if negative
+        }
+
+        while(number != 0) {
+            number = number / 10;  // Remove last digit
+            count++;                // Increment digit count
+        }
+    }
+
+    printf("Number of digits = %d\n", count);
+
+    return 0;
+}
