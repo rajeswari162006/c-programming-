@@ -1,0 +1,28 @@
+3. Write a C program to calculate simple interest for a bank customer.
+
+#include <stdio.h>
+
+int main() {
+    float principal, rate, time, simpleInterest;
+
+    printf("Enter Principal amount: ");
+    scanf("%f", &principal);
+
+    printf("Enter Rate of Interest: ");
+    scanf("%f", &rate);
+
+    printf("Enter Time (in years): ");
+    scanf("%f", &time);
+
+    simpleInterest = (principal * rate * time) / 100;
+
+    printf("Simple Interest = %.2f\n", simpleInterest);
+
+    return 0;
+}
+
+output:
+Enter Principal amount: 1000
+Enter Rate of Interest: 5
+Enter Time (in years): 2
+Simple Interest = 100.00
