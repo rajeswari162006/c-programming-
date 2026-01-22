@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+struct BusTicket {
+    int ticketNo;
+    char passengerName[50];
+    char source[50];
+    char destination[50];
+};
+
+int main() {
+    struct BusTicket t;
+
+    printf("Enter Ticket Number: ");
+    scanf("%d", &t.ticketNo);
+
+    printf("Enter Passenger Name: ");
+    scanf(" %[^\n]s", t.passengerName);
+
+    printf("Enter Source: ");
+    scanf(" %[^\n]s", t.source);
+
+    printf("Enter Destination: ");
+    scanf(" %[^\n]s", t.destination);
+
+    printf("\nBus Ticket Details:\nTicket No: %d\nPassenger: %s\nFrom: %s\nTo: %s\n", t.ticketNo, t.passengerName, t.source, t.destination);
+
+    return 0;
+}
