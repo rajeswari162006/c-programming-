@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int findMax(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    int x, y;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &x, &y);
+
+    int max = findMax(x, y);
+    printf("Maximum number is: %d\n", max);
+
+    return 0;
+}
