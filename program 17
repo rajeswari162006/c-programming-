@@ -1,0 +1,31 @@
+17. Write a C program to check whether a customer gets a discount.
+
+#include <stdio.h>
+
+int main() {
+    float amount, discount, finalAmount;
+
+    printf("Enter total purchase amount: ");
+    scanf("%f", &amount);
+
+    if (amount >= 1000) {
+        discount = amount * 0.10;
+        finalAmount = amount - discount;
+        printf("Discount applied: %.2f\n", discount);
+        printf("Final amount to pay: %.2f\n", finalAmount);
+    } else {
+        printf("No discount applied.\n");
+        printf("Final amount to pay: %.2f\n", amount);
+    }
+
+    return 0;
+}
+
+output:
+Enter total purchase amount: 1500
+Discount applied: 150.00
+Final amount to pay: 1350.00
+Enter total purchase amount: 750
+No discount applied.
+Final amount to pay: 750.00
+
