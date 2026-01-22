@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+    int roll;
+    char name[50];
+    float marks;
+};
+
+int main() {
+    struct Student s;
+    FILE *fp;
+    int rollNo;
+    int found = 0;
+
+    fp = fopen("students.txt", "r");
+    if (fp == NULL) {
+        printf("Unable to open file.\n");
+        return 1;
+    }
+
+    printf("Enter Roll Number to search: ");
+    scanf("%d", &rollNo);
+
+    while (fscanf(fp, "%d %s %f", &s.roll, s.name, &s.marks) != EOF) {
+        if (s.roll == rollNo) {
+            printf("Record Found: %d %s %.2f\n", s.roll, s.name, s.marks);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found)
+        printf("Record not found.\n");
+
+    fclose(fp);
+    return 0;
+}
