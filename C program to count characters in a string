@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str); // Use gets(str) if you want spaces
+
+    int length = strlen(str);
+    printf("Number of characters: %d\n", length);
+
+    return 0;
+}
