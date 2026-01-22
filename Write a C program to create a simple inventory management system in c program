@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+struct Item {
+    int id;
+    char name[20];
+    int quantity;
+};
+
+int main() {
+    struct Item inventory[10];
+    int n, i;
+
+    printf("How many items to add? ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        printf("Enter ID, Name, Quantity for item %d: ", i + 1);
+        scanf("%d %s %d", &inventory[i].id, inventory[i].name, &inventory[i].quantity);
+    }
+
+    printf("\n--- Inventory List ---\n");
+    for(i = 0; i < n; i++) {
+        printf("ID: %d, Name: %s, Quantity: %d\n", inventory[i].id, inventory[i].name, inventory[i].quantity);
+    }
+
+    return 0;
+}
