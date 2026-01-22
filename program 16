@@ -1,0 +1,24 @@
+16. Write a C program to check whether a number is even or odd.
+
+#include <stdio.h>
+
+int main() {
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num % 2 == 0) {
+        printf("%d is an Even number.\n", num);
+    } else {
+        printf("%d is an Odd number.\n", num);
+    }
+
+    return 0;
+}
+
+output:
+Enter a number: 8
+8 is an Even number.
+Enter a number: 7
+7 is an Odd number.
