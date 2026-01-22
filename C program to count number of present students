@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int n, count = 0, i, status;
+    
+    printf("Enter total number of students: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++) {
+        printf("Is student %d present? (1 for yes, 0 for no): ", i);
+        scanf("%d", &status);
+        if(status == 1) {
+            count++;
+        }
+    }
+
+    printf("Number of present students: %d\n", count);
+    return 0;
+}
