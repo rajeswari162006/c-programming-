@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+struct Sales {
+    char product[50];
+    int quantity;
+    float price;
+};
+
+int main() {
+    struct Sales s;
+    FILE *fp;
+
+    fp = fopen("sales.txt", "a");
+    if (fp == NULL) {
+        printf("Unable to open file.\n");
+        return 1;
+    }
+
+    printf("Enter Product Name: ");
+    scanf(" %[^\n]s", s.product);
+    printf("Enter Quantity Sold: ");
+    scanf("%d", &s.quantity);
+    printf("Enter Price per unit: ");
+    scanf("%f", &s.price);
+
+    fprintf(fp, "%s %d %.2f\n", s.product, s.quantity, s.price);
+    fclose(fp);
+
+    printf("Sales report saved.\n");
+    return 0;
+}
