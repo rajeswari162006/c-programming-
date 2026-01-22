@@ -1,0 +1,31 @@
+18. Write a C program to find whether a day is a working day or weekend.
+#include <stdio.h>
+
+int main() {
+    int day;
+
+    printf("Enter day number (1-7): ");
+    scanf("%d", &day);
+
+    switch(day) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            printf("Working Day\n");
+            break;
+        case 6:
+        case 7:
+            printf("Weekend\n");
+            break;
+        default:
+            printf("Invalid day number\n");
+    }
+
+    return 0;
+}
+
+output:
+Enter day number (1-7): 6
+Weekend
