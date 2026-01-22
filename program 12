@@ -1,0 +1,25 @@
+12. Write a C program to check pass or fail based on marks.
+
+#include <stdio.h>
+
+int main() {
+    float marks;
+
+    printf("Enter your marks: ");
+    scanf("%f", &marks);
+
+    if(marks >= 40) {
+        printf("Congratulations! You have passed.\n");
+    } else {
+        printf("Sorry! You have failed.\n");
+    }
+
+    return 0;
+}
+
+output:
+Enter your marks: 55
+Congratulations! You have passed.
+
+Enter your marks: 35
+Sorry! You have failed.
