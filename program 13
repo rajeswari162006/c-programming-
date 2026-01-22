@@ -1,0 +1,27 @@
+13. Write a C program to find the largest of three numbers.
+
+#include <stdio.h>
+
+int main() {
+    float num1, num2, num3, largest;
+
+    printf("Enter three numbers: ");
+    scanf("%f %f %f", &num1, &num2, &num3);
+
+    // Assume first number is largest
+    largest = num1;
+
+    if(num2 > largest)
+        largest = num2;
+    if(num3 > largest)
+        largest = num3;
+
+    printf("The largest number is: %.2f\n", largest);
+
+    return 0;
+}
+
+output:
+
+Enter three numbers: 10 25 15
+The largest number is: 25.00
