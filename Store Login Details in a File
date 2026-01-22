@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+struct Login {
+    char username[50];
+    char password[50];
+};
+
+int main() {
+    struct Login l;
+    FILE *fp;
+
+    fp = fopen("login.txt", "a");
+    if (fp == NULL) {
+        printf("Cannot open file.\n");
+        return 1;
+    }
+
+    printf("Enter Username: ");
+    scanf("%s", l.username);
+    printf("Enter Password: ");
+    scanf("%s", l.password);
+
+    fprintf(fp, "%s %s\n", l.username, l.password);
+    fclose(fp);
+
+    printf("Login details saved.\n");
+    return 0;
+}
