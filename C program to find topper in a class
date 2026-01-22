@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, maxIndex = 0;
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    int marks[n];
+    printf("Enter marks of students: ");
+    for(i = 0; i < n; i++)
+        scanf("%d", &marks[i]);
+
+    for(i = 1; i < n; i++) {
+        if(marks[i] > marks[maxIndex])
+            maxIndex = i;
+    }
+
+    printf("Topper is student %d with marks %d\n", maxIndex + 1, marks[maxIndex]);
+    return 0;
+}
