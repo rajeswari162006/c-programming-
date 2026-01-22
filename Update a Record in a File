@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+    int roll;
+    char name[50];
+    float marks;
+};
+
+int main() {
+    struct Student s;
+    FILE *fp, *temp;
+    int rollNo, found = 0;
+
+    fp = fopen("students.txt", "r");
+    temp = fopen("temp.txt", "w");
+    if (fp == NULL || temp == NULL) {
+        printf("Unable to open file.\n");
+        return 1;
+    }
+
+    printf("Enter Roll Number to update: ");
+    scanf("%d", &rollNo);
+
+    while (fscanf(fp, "%d %s %f", &s.roll, s.name, &s.marks) != EOF) {
+        if (s.roll == rollNo) {
+            printf("Enter new Name: ");
+            scanf(" %[^\n]s", s.name);
+            printf("Enter new Marks: ");
+            scanf("%f", &s.marks);
+            found = 1;
+        }
+        fprintf(temp, "%d %s %.2f\n", s.roll, s.name, s.marks);
+    }
+
+    fclose(fp);
+    fclose(temp);
+    remove("students.txt");
+    rename("temp.txt", "students.txt");
+
+    if (found)
+        printf("Record updated successfully.\n");
+    else
+        printf("Record not found.\n");
+
+    return 0;
+}
